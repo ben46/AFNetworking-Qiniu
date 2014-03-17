@@ -13,9 +13,8 @@ Pod::Spec.new do |s|
   s.source_files = 'AFQiniuClient/**/*.{h,m}'
   s.requires_arc = true
   s.dependency 'AFNetworking', '~>1.3'
-  s.dependency 'MagicKit', '~>0.0.1'
-  s.dependency 'JSONKit'
-
+  s.dependency 'JSONKit', :git => 'https://github.com/matsu911/JSONKit.git'
+ 
 
   s.prefix_header_contents = <<-EOS
 #ifdef __OBJC__

@@ -18,14 +18,6 @@
 #define kQiniuUpHost @"http://up.qiniu.com"
 
 
-#ifndef HAVE_MAGIC_KIT
-#define HAVE_MAGIC_KIT
-#endif
-
-#ifdef HAVE_MAGIC_KIT
-#import <MagicKit/MagicKit.h>
-#endif
-
 @interface AFQiniuClient ()
 
 @property (nonatomic, strong) NSString *token;
@@ -110,27 +102,7 @@
 }
 
 + (NSString *)mimeTypeForFile:(id)file {
-#ifdef HAVE_MAGIC_KIT
-    GEMagicResult *result;
-    
-    if ([file isKindOfClass:[NSData class]]) {
-        result = [GEMagicKit magicForData:file];
-        return result.mimeType;
-    } else if ([file isKindOfClass:[NSString class]]) {
-        
-        NSURL *fileURL = [NSURL fileURLWithPath:file];
-        if (fileURL) {
-            result = [GEMagicKit magicForFileAtURL:fileURL];
-            return result.mimeType;
-        } else {
-            return @"application/octet-stream";
-        }
-    } else {
-        return @"application/octet-stream";
-    }
-#else
     return @"application/octet-stream";
-#endif
 }
 
 @end
