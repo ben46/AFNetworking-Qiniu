@@ -11,11 +11,11 @@ AFNetworking 1.x with Qiniu Cloud Service （七牛）
 
 ###使用Pod
 
-    pod 'AFQiniuClient', '~> 0.0.1'
+	pod 'AFQiniuClient', :git => 'https://github.com/ben46/AFNetworking-Qiniu.git', :tag => '0.0.2'
 
 #####如果JSONKit有问题 请在自己的target下改成这样
 
-    pod 'JSONKit', :podspec => 'https://raw.github.com/jstart/Specs/8e68f73dae8a378bc16e9b3891b7df6f5f4357d9/JSONKit/1.6/JSONKit.podspec'
+	pod 'JSONKit',:git => 'https://github.com/matsu911/JSONKit.git'
 
 ###自行编译AFQiniuClient 
 	* 下载JSONKit， Magickit
