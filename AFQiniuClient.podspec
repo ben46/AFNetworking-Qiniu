@@ -1,11 +1,11 @@
 Pod::Spec.new do |s|
   s.name         = "AFQiniuClient"
-  s.version      = "0.0.2"
+  s.version      = "0.0.3"
   s.summary      = "AFNetworking Extension for Qiniu(七牛)"
   s.homepage     = "https://github.com/aelam/AFNetworking-Qiniu"
   s.license      = 'Apache License, Version 2.0'
   s.author       = "Ryan Wang => ryanwang@me.com"
-  s.source       = { :git => 'https://github.com/ben46/AFNetworking-Qiniu.git', :tag => '0.0.2' }
+  s.source       = { :git => 'https://github.com/ben46/AFNetworking-Qiniu.git', :tag => '0.0.3' }
 
   s.ios.deployment_target = '5.0'
   s.osx.deployment_target = '10.7'
