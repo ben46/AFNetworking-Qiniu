@@ -7,7 +7,6 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "QiniuConfig.h"
 
 @interface RViewController : UIViewController
 

@@ -13,7 +13,6 @@ Pod::Spec.new do |s|
   s.source_files = 'AFQiniuClient/**/*.{h,m}'
   s.requires_arc = true
   s.dependency 'AFNetworking', '~>1.3'
-  s.dependency 'JSONKit'
  
 
   s.prefix_header_contents = <<-EOS

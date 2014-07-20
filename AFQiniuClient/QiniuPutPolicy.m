@@ -8,7 +8,28 @@
 #import "QiniuPutPolicy.h"
 #import <CommonCrypto/CommonHMAC.h>
 #import "GTMBase64.h"
-#import <JSONKit/JSONKit.h>
+
+@interface NSDictionary (BVJSONString)
+
+@end
+
+@implementation NSDictionary (BVJSONString)
+
+-(NSString*) bv_jsonStringWithPrettyPrint:(BOOL) prettyPrint {
+    NSError *error;
+    NSData *jsonData = [NSJSONSerialization dataWithJSONObject:self
+                                                       options:(NSJSONWritingOptions)    (prettyPrint ? NSJSONWritingPrettyPrinted : 0)
+                                                         error:&error];
+    
+    if (! jsonData) {
+        NSLog(@"bv_jsonStringWithPrettyPrint: error: %@", error.localizedDescription);
+        return @"{}";
+    } else {
+        return [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding];
+    }
+}
+
+@end
 
 @implementation QiniuPutPolicy
 
@@ -70,7 +91,7 @@
     }
     [dic setObject:deadlineNumber forKey:@"deadline"];
     
-    NSString *json = [dic JSONString];
+    NSString *json = [dic bv_jsonStringWithPrettyPrint:NO];
     return json;
 }
 
