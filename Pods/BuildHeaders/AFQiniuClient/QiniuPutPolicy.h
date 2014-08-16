@@ -1,1 +1,0 @@
-../../AFQiniuClient/AFQiniuClient/QiniuPutPolicy.h

@@ -1,1 +1,0 @@
-../../AFQiniuClient/AFQiniuClient/AFQiniuClient.h
